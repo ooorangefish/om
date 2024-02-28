@@ -18,14 +18,14 @@ const Mymusic = () => {
         <div className="flex ml-[220px]">
             <div className="bg-gradient-to-r from-orange-100 to-orange-500 w-[200px] h-[200px] flex jusify-center align-center"><img src='/images/爱心.png' className='w-[50px] h-[50px] my-auto mx-auto ' /></div>
             <div  className="flex flex-col ml-[15px]">
-                <div className="text-xs mt-[20px]">playlist</div>
-            <div className="text-4xl font-semibold"> 喜欢的音乐</div>
-            <div className="flex flex-row text-xs mt-[10px]">
+                <div className="text-xs mt-[27px]">playlist</div>
+            <div className="text-4xl font-semibold mt-[7px]"> 喜欢的音乐</div>
+            <div className="flex flex-row text-xs mt-[12px]">
                 <Avatar className=''>
                     <AvatarImage src="/images/心.avif" className="" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-                <div className="mt-[17px] mx-[5px]">orange</div>
+                <div className="mt-[17px] mx-[7px]">orange</div>
                 <div className="mt-[17px]">共120首</div>
             </div>
             
