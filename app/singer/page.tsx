@@ -17,8 +17,8 @@ const singerSong = [{ name: "爱是昂贵的", singer: "声音玩具", album: "�
 
 
 const singerPage = () => {
-    const [play, setPlay] = useState(false);
-    const [adding, setAdding] = useState(false);
+    const [playIndex, setPlayIndex] = useState(-1);
+    const [adding, setAdding] = useState(-1);
 
     return <div>
         <div className="flex ml-[220px]">
@@ -67,17 +67,17 @@ const singerPage = () => {
                             <TableCell className="text-right">{item.time}</TableCell>
                             <TableCell className=" flex flex-row gap-x-4"
                             >
-                                {/* ？？问题：怎么只控制一个 */}
-                                <div className="w-6" onMouseEnter={() => setPlay(true)}
-                                    onMouseLeave={() => setPlay(false)}>
-                                    {play ? 
+                                {/* ？？问题：怎么只控制一个 只有一个state数值就无法只控制一个 */}
+                                <div className="w-6" onMouseEnter={() => setPlayIndex(index)}
+                                    onMouseLeave={() => setPlayIndex(-1)}>
+                                    {playIndex==index ? 
                                     <img className="w-6" src="/images/播放.png" /> : <img className="w-56" src="/images/暂停黑.png" />
                                     }
                                 </div>
 
-                                <div className="w-6" onMouseEnter={() => setAdding(true)}
-                                    onMouseLeave={() => setAdding(false)}>
-                                    {adding ? 
+                                <div className="w-6" onMouseEnter={() => setAdding(index)}
+                                    onMouseLeave={() => setAdding(-1)}>
+                                    {adding==index ? 
                                     <img className="w-6" src="/images/加橙.png" /> : <img className="w-56" src="/images/加黑.png" />
                                     }
                                 </div>

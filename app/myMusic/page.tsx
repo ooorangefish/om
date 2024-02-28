@@ -26,7 +26,7 @@ const Mymusic = () => {
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <div className="mt-[17px] mx-[7px]">orange</div>
-                <div className="mt-[17px]">共120首</div>
+                <div className="mt-[17px]">共 120 首</div>
             </div>
             
             </div>
