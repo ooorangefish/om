@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { Progress } from "@/components/ui/progress";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -125,7 +126,33 @@ export default function RootLayout({
           </div>
         </div>
         {children}
-        <div className="fixed bottom-0 border-t-1 border-gray-200 w-full h-[100px] bg-orange-200"></div>
+        <div className="fixed bottom-0 border-t-1 border-gray-200 w-full h-[85px] border-t-2 border-solid border-black flex flex-row bg-white">
+          <div className="mt-2 flex flex-row ml-20 w-[200px]">
+            <img src="/images/鲜花.jpeg" className="w-14 h-14 rounded" />
+            <div className="ml-3 text-sm ">
+              <div className=" text-base  mt-1">我想念</div>
+              <div className=" mt-1 flex flex-row">
+                <img src="/images/麦克风.png" className="mx-1 w-3 h-3 mt-1" />
+                汪苏泷
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="/images/加 (2).png" className="w-4 mt-4 ml-10" />
+          </div>
+          <div className="mt-2 ml-[140px] flex flex-col">
+            <div className="flex flex-row justify-items-center ml-[200px]">
+              <img src="/images/上一首.png" className="w-7 h-7 pt-1" />
+              <img src="/images/播放 (6).png" className="w-8 h-8 mx-6" />
+              <img src="/images/下一首.png" className="w-7 h-7 pt-1" />
+            </div>
+            <div className="flex flex-row text-sm mt-1">
+              <div>00:16</div>
+              <Progress value={33} className="w-[480px] h-[7px] mx-5 mt-2" />
+              <div>03:12</div>
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );
