@@ -16,7 +16,7 @@ const likedSong = [{ name: "爱是昂贵的", singer: "声音玩具", album: "�
 const Mymusic = () => {
     return <div className="bg-gray-80">
         <div className="flex ml-[160px] pt-[10px]">
-            <div className="w-[240px] h-[240px]r">
+            <div className="w-[240px] h-[240px]">
                 <img src='/images/鲜花.jpeg' className='w-full ' />
             </div>
             <div className="flex flex-col ml-[30px] mt-[12px]">

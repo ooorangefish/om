@@ -1,13 +1,13 @@
 "use client";
 
 import "@/app/globals.css";
-import { inter } from "@/app/ui/fonts";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Progress } from "@/components/ui/progress";
+import Link from "next/link";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -35,6 +35,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import ReactPlayer from "react-player/lazy";
+
 const titles = [
   { name: "发现音乐", link: "/" },
   { name: "我的音乐", link: "/myMusic" },
@@ -65,8 +67,12 @@ export default function RootLayout({
             })}
           </div>
           <div className="flex w-full max-w-sm items-center space-x-2 ">
+            {/* 根据关键词搜索在歌手和歌曲中filter搜索 */}
             <Input type="email" placeholder="周杰伦" />
-            <Button type="submit">搜索</Button>
+            {/* <Button type="submit">搜索</Button> */}
+            <Button type="submit" asChild>
+              <Link href="/search">搜索</Link>
+            </Button>
           </div>
           <div className="flex flex-row gap-x-2">
             {/* 条件判断是否有头像 */}
@@ -76,7 +82,10 @@ export default function RootLayout({
             </Avatar>
             <Dialog>
               <DialogTrigger asChild className="mr-11">
-                <Button variant="outline">登录</Button>
+                <Button variant="outline" asChild>
+                  <Link href="/login">登录</Link>
+                </Button>
+                {/* <Button>登录</Button> */}
               </DialogTrigger>
               <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
@@ -126,7 +135,8 @@ export default function RootLayout({
           </div>
         </div>
         {children}
-        <div className="fixed bottom-0 border-t-1 border-gray-200 w-full h-[85px] border-t-2 border-solid border-black flex flex-row bg-white">
+        {/* 播放栏 无歌曲播放时隐藏 */}
+        {/* <div className="fixed bottom-0 border-t-1 border-gray-200 w-full h-[95px] border-t-2 border-solid border-black flex flex-row bg-white">
           <div className="mt-2 flex flex-row ml-20 w-[200px]">
             <img src="/images/鲜花.jpeg" className="w-14 h-14 rounded" />
             <div className="ml-3 text-sm ">
@@ -151,6 +161,14 @@ export default function RootLayout({
               <Progress value={33} className="w-[480px] h-[7px] mx-5 mt-2" />
               <div>03:12</div>
             </div>
+          </div>
+        </div> */}
+        <div className="w-full py-3 mt-5">
+          <div className="w-full justify-center flex">
+            copy right @ooorange fish
+          </div>
+          <div className="w-full justify-center flex">
+            Powered by next.js tailwind
           </div>
         </div>
       </body>

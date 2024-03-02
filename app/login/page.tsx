@@ -1,7 +1,8 @@
 
 const Login=()=>{
-    return <a href="/myMusic"> 登录</a>
+    return <div>
+        <a href="/myMusic"> 登录</a>
+        </div>
 }
-// const Login2=()=><a>登录2</a>
 
 export default Login
