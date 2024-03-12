@@ -8,6 +8,7 @@ import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Progress } from "@/components/ui/progress";
 import Link from "next/link";
+import Player from "./components/Player";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -171,6 +172,7 @@ export default function RootLayout({
             Powered by next.js tailwind
           </div>
         </div>
+        <Player />
       </body>
     </html>
   );
