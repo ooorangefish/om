@@ -59,9 +59,13 @@ export default function RootLayout({
             橘子音乐
           </div>
           <div className="w-200 flex flex-row justify-between gap-x-3 items-center ">
-            {titles.map((item) => {
+            {titles.map((item, key) => {
               return (
-                <a className="hover:bg-orange-200 px-6 py-3" href={item.link}>
+                <a
+                  key={key}
+                  className="hover:bg-orange-200 px-6 py-3"
+                  href={item.link}
+                >
                   {item.name}
                 </a>
               );

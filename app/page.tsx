@@ -64,7 +64,7 @@ export default function Home() {
         >
           <CarouselContent>
             {pictures.map((item, index) => (
-              <CarouselItem>
+              <CarouselItem key={index}>
                 <div className="">
                   <Card className="border-white">
                     <CardContent className="p-0">
@@ -88,9 +88,9 @@ export default function Home() {
             歌曲推荐
           </div>
           <div className="flex flex-row flex-wrap gap-x-6 w-9/12 ml-1/12">
-            {musicRec.map((item) => {
+            {musicRec.map((item, index) => {
               return (
-                <div className="h-50 mb-2 hover:text-orange-400">
+                <div className="h-50 mb-2 hover:text-orange-400" key={index}>
                   <Link href="/song">
                     <img src={item.pic} className="rounded h-48" />
                     <a className="ml-[3px]">{item.name}</a>
