@@ -24,7 +24,7 @@ const singerSong = [
   { name: "爱是昂贵的", singer: "声音玩具", album: "劳动之余", time: "3:05" },
 ];
 
-const searchNew = () => {
+const SearchNew = () => {
   const [playIndex, setPlayIndex] = useState(-1);
   const [adding, setAdding] = useState(-1);
   return (
@@ -36,7 +36,7 @@ const searchNew = () => {
         </div>
         <div>
           {singer.map((item, index) => (
-            <div className="flex items-center space-x-4">
+            <div key={index} className="flex items-center space-x-4">
               <div className="w-[130px] h-[130px] p-3">
                 <Avatar className="w-full h-full">
                   <AvatarImage src={item.pic} className="" />
@@ -118,4 +118,4 @@ const searchNew = () => {
   );
 };
 
-export default searchNew;
+export default SearchNew;

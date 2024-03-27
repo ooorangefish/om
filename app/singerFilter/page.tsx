@@ -16,11 +16,12 @@ const singerList = [
 const typeList = ["全部", "男", "女", "组合"];
 const areaList = ["全部", "内地", "港台", "日本", "韩国"];
 
-const singerFilter = () => {
+const SingerFilter = () => {
   const [singerLook, setSingerLook] = useState(singerList);
   const [fCondition, setfCondition] = useState(["全部", "全部"]);
   //type 传入
   //选择类型 过滤 选择地区 过滤 同时选择共同过滤
+  //@ts-ignore
   const filterDo = (condition, num) => {
     console.log(num);
     console.log("传入condition", condition);
@@ -46,6 +47,7 @@ const singerFilter = () => {
       setSingerLook(newList);
     }
   };
+  //@ts-ignore
   const TypeLook = (props) => {
     return (
       <button
@@ -57,6 +59,7 @@ const singerFilter = () => {
     );
   };
 
+  //@ts-ignore
   const AreaLook = (props) => {
     return (
       <button
@@ -70,19 +73,22 @@ const singerFilter = () => {
   return (
     <div className="mx-[200px] ">
       <div className="flex flex-row gap-x-9 text-lg">
-        {typeList.map((item) => {
-          return <TypeLook>{item}</TypeLook>;
+        {typeList.map((item, index) => {
+          return <TypeLook key={index}>{item}</TypeLook>;
         })}
       </div>
       <div className="flex flex-row gap-x-9 text-lg">
         {areaList.map((item) => {
-          return <AreaLook>{item}</AreaLook>;
+          return <AreaLook key={item}>{item}</AreaLook>;
         })}
       </div>
       <div className="flex flex-row gap-x-6 mt-5 flex-wrap ">
         {singerLook.map((item) => {
           return (
-            <div className="bg-gray-100 w-[180px] h-[210px] mb-5 flex justify-center flex-wrap ">
+            <div
+              key={item.name}
+              className="bg-gray-100 w-[180px] h-[210px] mb-5 flex justify-center flex-wrap "
+            >
               <Avatar className="w-[180px] h-[180px]">
                 <AvatarImage src="/images/心.avif" className="" />
                 <AvatarFallback>CN</AvatarFallback>
@@ -98,4 +104,4 @@ const singerFilter = () => {
     </div>
   );
 };
-export default singerFilter;
+export default SingerFilter;
